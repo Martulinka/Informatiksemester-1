@@ -7,3 +7,7 @@ while len(kartenstapel) !=0 :
         break 
 if len(kartenstapel) ==0:
     print("Stapel ist leer")
+else:
+    print("Stapel ist nicht leer")
+    
+#while ist ein loop und if eine Verzweigung
