@@ -20,3 +20,12 @@ def Funktion(V, dT):
   return P
 
 P= Funktion()
+
+import temperatur
+from temperatur import celsius_to_kelvin, celsius_to_fahrenheit
+
+celsius=float(input("Geben Sie die Temperatur in Celsius an: "))    
+kelvin = celsius_to_kelvin(celsius)
+fahrenheit = celsius_to_fahrenheit(celsius)
+print(f"{celsius}°C sind {kelvin}K und {fahrenheit}°F")
+
