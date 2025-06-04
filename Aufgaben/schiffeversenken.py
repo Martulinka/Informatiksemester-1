@@ -28,18 +28,25 @@ def shoot_on_board(l_grid):
     return x,y
 
 def check_end_game(l_grid : list[list[str]]):
+    for row in I_grid:
+        for field in row:
+            if field==schiff:
+                return False
+
+    return True
     
-    return False
 
 render_grid(grid)
-
-while check_end_game(grid):
+counter=0
+while not check_end_game(grid):
     x,y = shoot_on_board(grid)
     if grid[y][x] == schiff:
         grid[y][x] = schiff_getroffen
     if grid[y][x] == wasser:
         grid[y][x] = wasser_getroffen
     # Clear cmd
+    counter+=1
     print("\033[H\033[J", end="")
     render_grid(grid)
-    input()
+    
+print(counter)
